@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EPress</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+
+    <!-- daisyUI Configuration -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!--  -->
+
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/bef86603c0.js" crossorigin="anonymous"></script>
+
+
+
+    <!-- tailwind custom color -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                        'btn-bg-primary': '#797DFC',
+                        'border-color-primary': '#DD121111',
+                        'gray-color-primary': '#03071266',
+                        'footer-bg': '#131318',
+                        'green-light-color-primary': '#1DD10019',
+
+                    }
+                }
+            }
+        }
+    </script>
+    <!--  -->
+
+    <style>
+        .font-mulish {
+            font-family: "Mulish", sans-serif;
+        }
+
+
+        body {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body class="font-mulish">
+
+    <!--------------------------HEADER STARTS  --------------------------->
+    <header class="">
+        <!-- NAVBAR STARTS -->
+        <div class="container mx-auto lg:px-24 py-8 ">
+            <div class="navbar">
+                <div class="navbar-start">
+
+                    <a class="btn btn-ghost lg:text-5xl font-bold" style="margin-right: -0.2em;">EPress</a>
+                </div>
+
+                <div class="navbar-end flex lg:gap-6 items-center nav-icons ">
+
+
+                    <div class="tooltip" data-tip="home">
+                        <button class="">
+                            <img class="" src="images/house.png" alt="" title="home">
+                        </button>
+                    </div>
+
+                    <div class="tooltip" data-tip="edit">
+                        <button class=""> <img src="images/pen.png" alt="" title="edit">
+
+                        </button>
+                    </div>
+
+
+                    <div class="tooltip" data-tip="add">
+                        <button class=""> <img src="images/add.png" alt="" title="add">
+
+                        </button>
+                    </div>
+                    <div class="tooltip" data-tip="flag">
+                        <button class=""> <img src="images/flag.png" alt="" title="flag">
+
+                        </button>
+                    </div>
+
+
+                    <a class="btn bg-btn-bg-primary px-6 py-4 text-white rounded-3xl font-bold">Sign In </a>
+                </div>
+            </div>
+
+        </div>
+        <!-- NAVBAR ENDS -->
+
+        <!-- BANNER STARTS -->
+        <section class="container mx-auto px-1 lg:px-24">
+            <div class="carousel w-full lg:h-[90vh] object-cover relative bg-[#12132D] rounded-[46px]">
+                <div id="slide1" class="carousel-item relative w-full mb-0 lg:-mt-0 object-cover">
+                    <!-- <img src="images/bgbanner.png" class="w-full h-full lg:h-5/7 rounded-2xl object-cover" /> -->
+
+
+                    <div class="w-full h-full bg-cover bg-center rounded-2xl lg:flex justify-center items-center p-4 gap-8 lg:p-40"
+                        style="background-image: url('images/bgbanner.png');">
+                        <!-- LEFT SIDE -->
+                        <div class="flex-1 lg:w-1/2 text-white pb-4">
+                            <h1 class="text-6xl font-bold lg:pb-8">Welcome to the <br> <span
+                                    class="banner-epress">EPress</span> Forum</h1>
+                            <p class="pb-8">Share your favorite opinion and win an EPress forum coffee mug!</p>
+
+
+                            <!-- search -->
+
+                            <label class="input input-bordered flex items-center gap-2 rounded-3xl">
+
+                                <input id="search-input" type="text" class="grow text-black"
+                                    placeholder="Search here anything" />
+
+                                <span onclick="searchData()" id="search-btn"
+                                    class="badge bg-btn-bg-primary text-white text-xl font-bold p-5"><button>Search</button></span>
+                            </label>
+                            <!--  -->
+                        </div>
+
+                        <!-- RIGHT SIDE -->
+                        <div class=" lg:w-1/2 bg-white rounded-3xl p-11 flex justify-around text-2xl font-medium ">
+                            <div class="text-black">
+                                <p>Registered Users</p>
+                                <p>Forum</p>
+                                <p>Topics</p>
+                                <p>Replies</p>
+                            </div>
+
+                            <div>
+                                <p>01</p>
+                                <p>05</p>
+                                <p>01</p>
+                                <p>01</p>
+                            </div>
+                            <!-- Additional content can be added here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- BANNER ENDS -->
+
+
+    </header>
+
+    <!-- SPINNER -->
+    <div class="my-8 text-center hidden" id="loading-spinner">
+        <span class="loading loading-bars loading-xs"></span>
+        <span class="loading loading-bars loading-sm"></span>
+        <span class="loading loading-bars loading-md"></span>
+        <span class="loading loading-bars loading-lg"></span>
+
+        <!-- <img id="" class="loading text-info " src="images/snipper.gif" width="200px" alt=""> -->
+    </div>
+
+
+    <!--------------------------HEADER ENDS  --------------------------->
+
+
+
+
+    <!--------------------------MAIN STARTS  --------------------------->
+    <main class="py-8 pb-2">
+
+        <!-- LETS DISCUSS STARTS -->
+        <section class="container mx-auto lg:px-24 py-4">
+
+            <div class="text-center">
+                <h3 class="text-4xl font-bold">Let’s Discuss</h3>
+
+                <P class="text-gray-color-primary mt-8 mb-8">Yes, you can run unit tests and view the results directly
+                    within the app. The <br> integrated testing features allow for a streamlined .</P>
+            </div>
+            <span style="color: red; font-weight: 700; font-size: 40px;" class="error text-center">
+                <p id="no-post-error"></p>
+            </span>
+
+
+            <!-- LEFT & RIGHT CONTAINER STARTS -->
+            <div class="flex flex-col lg:flex-row gap-6 rounded-3xl bg-white p-8 ">
+
+
+                <!---------------------- LEFT SIDE STARTS ---------------------->
+                <div id="posts-container" class="flex-1 rounded-3xl space-y-8 w-full lg:w-8/12">
+
+
+                </div>
+                <!---------------------- LEFT SIDE ENDS ---------------------->
+
+
+
+
+                <!---------------------- RIGHT SIDE STARTS ---------------------->
+                <div class="rounded-xl space-y-8 w-full lg:w-5/12">
+                    <!-- calculation -->
+                    <div id="read-posts-container" class="bg-[#F7F8F8] border rounded-3xl p-4 space-y-4 ">
+
+                        <div class="flex justify-between font-bold">
+
+                            <p class="">Title </p>
+
+                            <div class="flex gap-2">
+
+                                <img src="images/right-click.png" alt="">
+
+                                <p class="text-right">Mark as read (<span id="post-read-counts"
+                                        class="bg-green-color-primary px-2 py-[2px] text-xs rounded-lg">0</span>)</p>
+
+                            </div>
+                        </div>
+
+
+                        <!-- READ POSTS -->
+
+
+                    </div>
+
+                </div>
+                <!---------------------- RIGHT SIDE ENDS ---------------------->
+
+
+            </div>
+            <!-- LEFT & RIGHT CONTAINER ENDS -->
+
+        </section>
+        <!-- LETS DISCUSS ENDS -->
+
+        <!-- JOIN OUR FORUM STARTS -->
+        <section class="container mx-auto px-1 lg:px-24">
+            <div class="carousel w-full lg:h-[90vh] object-cover relative bg-[#12132D] rounded-[46px]">
+                <div id="slide1" class="carousel-item relative w-full mb-0 lg:-mt-0 object-cover">
+                    <!-- <img src="images/bgbanner.png" class="w-full h-full lg:h-5/7 rounded-2xl object-cover" /> -->
+
+
+                    <div
+                        class="w-full h-full bg-cover bg-center rounded-2xl lg:flex justify-center items-center p-4 gap-8 lg:p-28">
+                        <!-- LEFT SIDE -->
+                        <div class="flex-1 lg:w-1/2 text-white pb-4">
+                            <h1 class="text-6xl font-bold lg:pb-8">Join Our Forum</h1>
+                            <p class="pb-8">Share your favorite opinion and win and wp forum coffee mug! Yes, you can
+                                run unit tests and view the results directly within the app.</p>
+
+
+
+                            <button
+                                class="btn border-none bg-btn-bg-primary text-white text-xl font-bold rounded-3xl ">Registered
+                                Now</button>
+                        </div>
+
+                        <!-- RIGHT SIDE -->
+                        <div class=" lg:w-1/2 bg-[#12132D] rounded-3xl p-11 flex justify-around text-2xl font-medium ">
+                            <img src="images/joinforum.png" alt="">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- JOIN OUR FORUM STARTS -->
+
+
+        <!-- LATEST POSTS STARTS -->
+        <section class="container mx-auto lg:px-24 py-28">
+
+            <div class="text-center">
+                <h3 class="text-4xl font-bold">Latest Posts</h3>
+
+                <P class="text-gray-color-primary mt-8 mb-8">Yes, you can run unit tests and view the results directly
+                    within the app. The <br> integrated testing features allow for a streamlined .</P>
+            </div>
+
+
+            <!-- CARDS CONTAINER -->
+            <div id="latest-post-card-container" class="flex flex-col lg:flex-row gap-6 rounded-3xl bg-white p-8  ">
+                <!-- card -->
+
+            </div>
+
+        </section>
+        <!-- LATEST POSTS ENDS -->
+
+
+
+        <footer class="footer footer-center p-10 bg-base-200 text-base-content rounded">
+            <nav class="grid grid-flow-col gap-8">
+
+                <a class="btn btn-ghost text-5xl font-bold text-[#12132D]" style="margin-right: -0.2em;">EPress</a>
+
+            </nav>
+            <p>Thank you for reading! Stay tuned for more insightful articles. Don't forget to <br> subscribe to our
+                newsletter for the latest updates.
+
+            </p>
+            <nav>
+                <div class="grid grid-flow-col gap-4">
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-github"></i>
+                </div>
+            </nav>
+            <aside>
+                <p>Copyright © 2024 - All right reserved</p>
+            </aside>
+        </footer>
+
+
+    </main>
+    <!--------------------------MAIN ENDS  --------------------------->
+
+
+    <script src="utility.js"></script>
+</body>
+
+</html>

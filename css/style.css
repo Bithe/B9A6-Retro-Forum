@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+.nav-icons{
+  cursor: pointer;
+}
+
+.banner-epress{
+  background: linear-gradient(to right, rgb(38, 24, 89), rgb(131, 133, 199), rgba(95, 97, 154, 0), rgb(216, 206, 233));
+    -webkit-background-clip: text; /* For Safari */
+    background-clip: text;
+    color: transparent;
+
+}
+
+
+
+
